@@ -1,0 +1,12 @@
+<resources>
+	<string name="app_name">百宝箱</string>
+	<string name="video_source">视频来源：</string>
+	<string name="video_address">视频地址：</string>
+	<string name="select_video">选择视频</string>
+	<string name="start_extract">开始提取</string>
+	<string name="extract_audio">提取音频</string>
+	<string name="extract_video">提取视频</string>
+	<string name="extract_video_no_voice">提取视频：不含声音，只提取画面</string>
+	<string name="notice_extract">注：提取音频，只提取声音，不包含画面；反之，提取视频只提取画面，不包含声音。</string>
+	<string name="percent">%.0f%%</string>
+</resources>
