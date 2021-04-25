@@ -5,9 +5,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.AdapterView
 import android.widget.Toast
 import com.arthenica.ffmpegkit.*
 import com.samoy.treasurechest.R
@@ -18,9 +16,6 @@ import com.samoy.treasurechest.util.FileUtil
 import com.samoy.treasurechest.view.ProgressDialog
 import java.io.File
 
-
-private const val POSITION_LOCAL_VIDEO = 0
-private const val POSITION_NET_VIDEO = 1
 
 private const val REQUEST_PICK_VIDEO = 0
 private const val REQUEST_EXTRACT_AUDIO = 1

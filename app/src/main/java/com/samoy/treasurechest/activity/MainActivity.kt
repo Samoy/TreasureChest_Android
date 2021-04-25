@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity(), CommandViewAdapter.OnCommandItemClick 
 	override fun onClick(command: CommandBean, item: View, position: Int) {
 		when (command.command) {
 			Command.VIDEO_EXTRACT -> startActivity(Intent(this, VideoExtractActivity::class.java))
+			Command.VIDEO_COMPOSE -> startActivity(Intent(this, VideoComposeActivity::class.java))
 			else -> return
 		}
 	}
