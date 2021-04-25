@@ -26,7 +26,7 @@ private const val REQUEST_PICK_VIDEO = 0
 private const val REQUEST_EXTRACT_AUDIO = 1
 private const val REQUEST_EXTRACT_VIDEO = 2
 
-class VideoExtractActivity : BaseActivity(), AdapterView.OnItemSelectedListener {
+class VideoExtractActivity : BaseActivity() {
 	private lateinit var binding: ActivityVideoExtractBinding
 	private lateinit var inUri: Uri
 
@@ -50,24 +50,6 @@ class VideoExtractActivity : BaseActivity(), AdapterView.OnItemSelectedListener 
 		binding = ActivityVideoExtractBinding.inflate(layoutInflater)
 		setContentView(binding.root)
 		initPlayer()
-		binding.spinner.onItemSelectedListener = this
-	}
-
-	override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-		when (position) {
-			POSITION_LOCAL_VIDEO -> {
-				binding.editVideoAddress.visibility = View.GONE
-				binding.btnSelectVideo.visibility = View.VISIBLE
-			}
-			POSITION_NET_VIDEO -> {
-				binding.editVideoAddress.visibility = View.VISIBLE
-				binding.btnSelectVideo.visibility = View.GONE
-			}
-		}
-	}
-
-	override fun onNothingSelected(parent: AdapterView<*>?) {
-
 	}
 
 	private fun initPlayer() {
@@ -92,7 +74,6 @@ class VideoExtractActivity : BaseActivity(), AdapterView.OnItemSelectedListener 
 		val timeInMilliseconds = statistics.time
 		if (timeInMilliseconds > 0) {
 			val completePercentage = timeInMilliseconds.toDouble() / mediaDuration * 100
-			Log.i("统计", "$completePercentage--$timeInMilliseconds--$mediaDuration")
 			runOnUiThread {
 				progressDialogBinding.barProgress.progress = completePercentage.toInt()
 				progressDialogBinding.tvProgress.text =
@@ -215,18 +196,13 @@ class VideoExtractActivity : BaseActivity(), AdapterView.OnItemSelectedListener 
 		// ffmpeg -i 1.mp4 -an -y 2.mp4
 		val videoPath = FFmpegKitConfig.getSafParameterForWrite(this, videoUri)
 		val command = "-i \"$cacheFilePath\" -an -y \"$videoPath\""
-		FFmpegKit.executeAsync(command, {
+		FFmpegKit.executeAsync(command) {
 			if (ReturnCode.isSuccess(it.returnCode)) {
-				Log.i("统计", "完成")
 				runOnUiThread {
 					progressDialog.dismiss()
 					Toast.makeText(this, "提取成功", Toast.LENGTH_SHORT).show()
 				}
 			}
-		}, {
-
-		}, {
-
-		})
+		}
 	}
 }
