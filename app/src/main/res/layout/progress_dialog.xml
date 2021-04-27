@@ -17,6 +17,7 @@
 		android:id="@+id/tv_progress"
 		android:layout_width="40dp"
 		android:layout_height="wrap_content"
+		android:text="@string/percent_zero"
 		android:textAlignment="textEnd"
 		android:textColor="@android:color/holo_red_light" />
 </LinearLayout>

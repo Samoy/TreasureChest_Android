@@ -38,7 +38,6 @@ class VideoExtractActivity : BaseActivity() {
 
 	// 媒体时长，以毫秒为单位
 	private var mediaDuration: Double = 0.00
-	private lateinit var statistics: Statistics
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -57,7 +56,6 @@ class VideoExtractActivity : BaseActivity() {
 		binding.btnExtractAudio.setOnClickListener { extraAudio() }
 		binding.btnExtractVideo.setOnClickListener { extraVideo() }
 		FFmpegKitConfig.enableStatisticsCallback {
-			statistics = it
 			updateProgress(it)
 		}
 	}
@@ -177,11 +175,13 @@ class VideoExtractActivity : BaseActivity() {
 		val audioPath = FFmpegKitConfig.getSafParameterForWrite(this, audioUri)
 		val command = "-i \"$cacheFilePath\" -vn -y \"$audioPath\""
 		FFmpegKit.executeAsync(command) {
-			if (ReturnCode.isSuccess(it.returnCode)) {
-				runOnUiThread {
-					progressDialog.dismiss()
-					Toast.makeText(this, "提取成功", Toast.LENGTH_SHORT).show()
-				}
+			runOnUiThread {
+				progressDialog.dismiss()
+				Toast.makeText(
+					this,
+					"提取${if (ReturnCode.isSuccess(it.returnCode)) "成功" else "失败"}",
+					Toast.LENGTH_SHORT
+				).show()
 			}
 		}
 	}
@@ -192,11 +192,13 @@ class VideoExtractActivity : BaseActivity() {
 		val videoPath = FFmpegKitConfig.getSafParameterForWrite(this, videoUri)
 		val command = "-i \"$cacheFilePath\" -an -y \"$videoPath\""
 		FFmpegKit.executeAsync(command) {
-			if (ReturnCode.isSuccess(it.returnCode)) {
-				runOnUiThread {
-					progressDialog.dismiss()
-					Toast.makeText(this, "提取成功", Toast.LENGTH_SHORT).show()
-				}
+			runOnUiThread {
+				progressDialog.dismiss()
+				Toast.makeText(
+					this,
+					"提取${if (ReturnCode.isSuccess(it.returnCode)) "成功" else "失败"}",
+					Toast.LENGTH_SHORT
+				).show()
 			}
 		}
 	}

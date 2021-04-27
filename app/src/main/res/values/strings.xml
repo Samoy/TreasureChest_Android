@@ -7,7 +7,7 @@
 	<string name="extract_audio">提取音频</string>
 	<string name="extract_video">提取视频</string>
 	<string name="extract_video_no_voice">提取视频：不含声音，只提取画面</string>
-	<string name="notice_extract">注：提取音频，只提取声音，不包含画面；反之，提取视频只提取画面，不包含声音。</string>
+	<string name="notice_extract">注：提取音频只提取声音，不包含画面；反之，提取视频只提取画面，不包含声音。</string>
 	<string name="percent">%.0f%%</string>
 	<string name="select_audio">选择音频</string>
 	<string name="play">播放</string>
@@ -16,4 +16,5 @@
 	<string name="time_zero">00:00</string>
 	<string name="start_compose">开始合成</string>
 	<string name="video_compose_tips">注意：\n1、所选视频不能包含音频流;\n2、若音频和视频时长不一致，则较长的资源将会被截断。</string>
+    <string name="percent_zero" formatted="false">0%</string>
 </resources>
