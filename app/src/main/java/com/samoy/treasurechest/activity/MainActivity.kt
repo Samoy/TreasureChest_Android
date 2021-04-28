@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity(), CommandViewAdapter.OnCommandItemClick 
 		when (command.command) {
 			Command.VIDEO_EXTRACT -> startActivity(Intent(this, VideoExtractActivity::class.java))
 			Command.VIDEO_COMPOSE -> startActivity(Intent(this, VideoComposeActivity::class.java))
+			Command.VIDEO_FORMAT -> startActivity(Intent(this, VideoSwitchActivity::class.java))
 			else -> return
 		}
 	}

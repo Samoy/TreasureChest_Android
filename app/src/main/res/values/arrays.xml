@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="video_source">
-		<item>本地视频</item>
-		<item>网络视频</item>
+	<string-array name="video_formats">
+		<item>wmv</item>
+		<item>asf</item>
+		<item>rm</item>
+		<item>mp4</item>
+		<item>3gp</item>
+		<item>mov</item>
+		<item>m4v</item>
+		<item>avi</item>
+		<item>mkv</item>
+		<item>flv</item>
+		<item>dash</item>
 	</string-array>
 </resources>

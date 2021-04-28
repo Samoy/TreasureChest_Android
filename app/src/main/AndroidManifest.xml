@@ -13,6 +13,7 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/Theme.TreasureChest">
+		<activity android:name=".activity.VideoSwitchActivity"></activity>
 		<activity android:name=".activity.VideoComposeActivity" />
 		<activity android:name=".activity.VideoExtractActivity" />
 		<activity android:name=".activity.MainActivity">

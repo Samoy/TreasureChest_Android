@@ -15,6 +15,9 @@
 	<string name="play_audio">播放音频</string>
 	<string name="time_zero">00:00</string>
 	<string name="start_compose">开始合成</string>
-	<string name="video_compose_tips">注意：\n1、所选视频不能包含音频流;\n2、若音频和视频时长不一致，则较长的资源将会被截断。</string>
-    <string name="percent_zero" formatted="false">0%</string>
+	<string name="video_compose_tips">注：\n1、所选视频不能包含音频流;\n2、若音频和视频时长不一致，则较长的资源将会被截断。</string>
+	<string name="percent_zero" formatted="false">0%</string>
+	<string name="select_format_">选择格式：</string>
+	<string name="start_switch">开始转码</string>
+	<string name="tips_switch">注：转码失败可能是格式不支持。</string>
 </resources>

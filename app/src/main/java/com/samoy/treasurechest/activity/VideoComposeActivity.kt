@@ -7,7 +7,6 @@ import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.text.format.DateUtils
-import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import com.arthenica.ffmpegkit.*
@@ -16,7 +15,7 @@ import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.material.slider.Slider
 import com.samoy.treasurechest.R
 import com.samoy.treasurechest.databinding.ActivityVideoComposeBinding
-import com.samoy.treasurechest.databinding.ProgressDialogBinding
+import com.samoy.treasurechest.databinding.ViewProgressDialogBinding
 import com.samoy.treasurechest.util.FileUtil
 import com.samoy.treasurechest.view.ProgressDialog
 import java.util.*
@@ -34,7 +33,7 @@ class VideoComposeActivity : BaseActivity() {
 	private lateinit var audioMediaPlayer: MediaPlayer
 	private lateinit var videoMediaPlayer: SimpleExoPlayer
 	private lateinit var progressDialog: AlertDialog
-	private lateinit var progressDialogBinding: ProgressDialogBinding
+	private lateinit var progressDialogBinding: ViewProgressDialogBinding
 	private var isPlaying = false
 	private var timer: Timer? = Timer()
 	private var changeByUser = false

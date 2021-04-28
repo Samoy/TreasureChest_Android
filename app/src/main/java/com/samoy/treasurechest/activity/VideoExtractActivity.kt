@@ -5,12 +5,13 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import com.arthenica.ffmpegkit.*
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.SimpleExoPlayer
 import com.samoy.treasurechest.R
 import com.samoy.treasurechest.databinding.ActivityVideoExtractBinding
-import com.samoy.treasurechest.databinding.ProgressDialogBinding
+import com.samoy.treasurechest.databinding.ViewProgressDialogBinding
 import com.samoy.treasurechest.util.AVUtil
 import com.samoy.treasurechest.util.FileUtil
 import com.samoy.treasurechest.view.ProgressDialog
@@ -22,6 +23,7 @@ private const val REQUEST_EXTRACT_AUDIO = 1
 private const val REQUEST_EXTRACT_VIDEO = 2
 
 class VideoExtractActivity : BaseActivity() {
+	private lateinit var videoMediaPlayer: SimpleExoPlayer
 	private lateinit var binding: ActivityVideoExtractBinding
 	private lateinit var inUri: Uri
 
@@ -34,7 +36,7 @@ class VideoExtractActivity : BaseActivity() {
 	private lateinit var cacheFilePath: String
 
 	private lateinit var progressDialog: AlertDialog
-	private lateinit var progressDialogBinding: ProgressDialogBinding
+	private lateinit var progressDialogBinding: ViewProgressDialogBinding
 
 	// 媒体时长，以毫秒为单位
 	private var mediaDuration: Double = 0.00
@@ -47,10 +49,9 @@ class VideoExtractActivity : BaseActivity() {
 	}
 
 	private fun initPlayer() {
+		videoMediaPlayer = SimpleExoPlayer.Builder(this).build()
 		binding.player.apply {
-			fullscreenButton.visibility = View.GONE
-			titleTextView.visibility = View.GONE
-			backButton.visibility = View.GONE
+			player = videoMediaPlayer
 		}
 		binding.btnSelectVideo.setOnClickListener { openFile() }
 		binding.btnExtractAudio.setOnClickListener { extraAudio() }
@@ -146,7 +147,8 @@ class VideoExtractActivity : BaseActivity() {
 		if (requestCode == REQUEST_PICK_VIDEO && resultCode == Activity.RESULT_OK) {
 			data?.data?.also { uri ->
 				inUri = uri
-				binding.player.setUp(uri.toString(), true, "video")
+				videoMediaPlayer.setMediaItem(MediaItem.fromUri(uri))
+				videoMediaPlayer.prepare()
 			}
 			return
 		}
