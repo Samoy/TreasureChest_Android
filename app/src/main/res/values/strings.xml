@@ -1,23 +1,28 @@
 <resources>
-	<string name="app_name">百宝箱</string>
-	<string name="video_source">视频来源：</string>
-	<string name="video_address">视频地址：</string>
-	<string name="select_video">选择视频</string>
-	<string name="start_extract">开始提取</string>
-	<string name="extract_audio">提取音频</string>
-	<string name="extract_video">提取视频</string>
-	<string name="extract_video_no_voice">提取视频：不含声音，只提取画面</string>
-	<string name="notice_extract">注：提取音频只提取声音，不包含画面；反之，提取视频只提取画面，不包含声音。</string>
-	<string name="percent">%.0f%%</string>
-	<string name="select_audio">选择音频</string>
-	<string name="play">播放</string>
-	<string name="pause">暂停</string>
-	<string name="play_audio">播放音频</string>
-	<string name="time_zero">00:00</string>
-	<string name="start_compose">开始合成</string>
-	<string name="video_compose_tips">注：\n1、所选视频不能包含音频流;\n2、若音频和视频时长不一致，则较长的资源将会被截断。</string>
-	<string name="percent_zero" formatted="false">0%</string>
-	<string name="select_format_">选择格式：</string>
-	<string name="start_switch">开始转码</string>
-	<string name="tips_switch">注：转码失败可能是格式不支持。</string>
+    <string name="app_name">百宝箱</string>
+    <string name="video_source">视频来源：</string>
+    <string name="video_address">视频地址：</string>
+    <string name="select_video">选择视频</string>
+    <string name="start_extract">开始提取</string>
+    <string name="extract_audio">提取音频</string>
+    <string name="extract_video">提取视频</string>
+    <string name="extract_video_no_voice">提取视频：不含声音，只提取画面</string>
+    <string name="notice_extract">注：提取音频只提取声音，不包含画面；反之，提取视频只提取画面，不包含声音。</string>
+    <string name="percent">%.0f%%</string>
+    <string name="select_audio">选择音频</string>
+    <string name="play">播放</string>
+    <string name="pause">暂停</string>
+    <string name="play_audio">播放音频</string>
+    <string name="time_zero">00:00</string>
+    <string name="start_compose">开始合成</string>
+    <string name="video_compose_tips">注：\n1、所选视频不能包含音频流;\n2、若音频和视频时长不一致，则较长的资源将会被截断。</string>
+    <string name="percent_zero" formatted="false">0%</string>
+    <string name="select_format_">选择格式：</string>
+    <string name="start_switch">开始转码</string>
+    <string name="tips_switch">注：转码失败可能是格式不支持。</string>
+    <string name="start_download">开始下载</string>
+    <string name="pls_input_video_address_">请输入视频地址:</string>
+    <string name="tips_download">注：下载前请先使用播放器试播该视频，确认是有效的视频地址。</string>
+    <string name="start_compress">开始压缩</string>
+	<string name="tips_compress">注：此压缩为简易压缩，视频的各种参数会根据需要进行调整。若需要手动进行各项参数的调整，请使用Pro版。</string>
 </resources>

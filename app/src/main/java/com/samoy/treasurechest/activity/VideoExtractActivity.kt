@@ -48,6 +48,10 @@ class VideoExtractActivity : BaseActivity() {
 		initPlayer()
 	}
 
+	override fun getActivityTitle(): CharSequence {
+		return "视频提取"
+	}
+
 	private fun initPlayer() {
 		videoMediaPlayer = SimpleExoPlayer.Builder(this).build()
 		binding.player.apply {
@@ -165,9 +169,9 @@ class VideoExtractActivity : BaseActivity() {
 	}
 
 	private fun showDialog() {
-		val pair = ProgressDialog.create(this, "请稍等...")
-		progressDialog = pair.first
-		progressDialogBinding = pair.second
+		val (first, second) = ProgressDialog.create(this, "请稍等...")
+		progressDialog = first
+		progressDialogBinding = second
 		progressDialog.show()
 	}
 

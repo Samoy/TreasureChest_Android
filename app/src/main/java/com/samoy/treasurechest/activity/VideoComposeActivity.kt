@@ -52,6 +52,10 @@ class VideoComposeActivity : BaseActivity() {
 		initFFmpeg()
 	}
 
+	override fun getActivityTitle(): CharSequence {
+		return "视频合成"
+	}
+
 	private fun initFFmpeg() {
 		FFmpegKitConfig.enableStatisticsCallback {
 			updateProgress(it)
@@ -176,7 +180,7 @@ class VideoComposeActivity : BaseActivity() {
 		val videoPath = FFmpegKitConfig.getSafParameterForRead(this, videoUri)
 		FFprobeKit.getMediaInformationAsync(videoPath) {
 			val information = (it as MediaInformationSession).mediaInformation
-			mediaDuration = information.duration.toDouble()*1000
+			mediaDuration = information.duration.toDouble() * 1000
 		}
 		val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
 			type = "video/*"
@@ -234,9 +238,9 @@ class VideoComposeActivity : BaseActivity() {
 	}
 
 	private fun showDialog() {
-		val pair = ProgressDialog.create(this, "请稍等...")
-		progressDialog = pair.first
-		progressDialogBinding = pair.second
+		val (first, second) = ProgressDialog.create(this, "请稍等...")
+		progressDialog = first
+		progressDialogBinding = second
 		progressDialog.show()
 	}
 
