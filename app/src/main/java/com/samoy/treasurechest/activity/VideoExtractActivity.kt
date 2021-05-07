@@ -104,7 +104,7 @@ class VideoExtractActivity : BaseActivity() {
 			val fileExtension = FileUtil.getFileExtension(videoPath)
 			val fileName = FileUtil.getFileName(videoPath)
 			val file = File(externalCacheDir, "$fileName.${fileExtension}")
-			if (!file.exists()) {
+			if (file.exists()) {
 				file.delete()
 			}
 			val inputStream = contentResolver.openInputStream(inUri)

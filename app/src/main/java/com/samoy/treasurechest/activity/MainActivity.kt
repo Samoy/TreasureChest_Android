@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity(), CommandViewAdapter.OnCommandItemClick 
 			Command.VIDEO_COMPOSE -> startActivity(Intent(this, VideoComposeActivity::class.java))
 			Command.VIDEO_FORMAT -> startActivity(Intent(this, VideoSwitchActivity::class.java))
 			Command.VIDEO_COMPRESS -> startActivity(Intent(this, VideoCompressActivity::class.java))
+			Command.VIDEO_CAPTURE -> startActivity(Intent(this, VideoCaptureActivity::class.java))
 			else -> return
 		}
 	}

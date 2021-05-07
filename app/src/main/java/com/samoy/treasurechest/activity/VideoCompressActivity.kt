@@ -75,7 +75,7 @@ class VideoCompressActivity : BaseActivity() {
 	}
 
 	private fun getMediaInfo(uri: Uri) {
-		val videoPath = FFmpegKitConfig.getSafParameterForRead(this, inputUri)
+		val videoPath = FFmpegKitConfig.getSafParameterForRead(this, uri)
 		val session = FFprobeKit.getMediaInformation(videoPath) as MediaInformationSession
 		mediaDuration = session.mediaInformation.duration.toDouble() * 1000
 	}

@@ -24,5 +24,9 @@
     <string name="pls_input_video_address_">请输入视频地址:</string>
     <string name="tips_download">注：下载前请先使用播放器试播该视频，确认是有效的视频地址。</string>
     <string name="start_compress">开始压缩</string>
-	<string name="tips_compress">注：此压缩为简易压缩，视频的各种参数会根据需要进行调整。若需要手动进行各项参数的调整，请使用Pro版。</string>
+    <string name="tips_compress">注：此压缩为简易压缩，视频的各种参数会根据需要进行调整。若需要手动进行各项参数的调整，请使用Pro版。</string>
+    <string name="shot_current">截取当前帧</string>
+	<string name="tips_capture">注：您可以先暂停播放视频，然后再去截图，以便于确定你所截图的画面是您所想要的。</string>
+	<string name="shot_preview">截图预览</string>
+	<string name="save_capture">保存截图</string>
 </resources>

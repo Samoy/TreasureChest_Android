@@ -17,7 +17,8 @@
 		android:supportsRtl="true"
 		android:theme="@style/Theme.TreasureChest"
 		tools:ignore="UnusedAttribute">
-		<activity android:name=".activity.VideoCompressActivity"></activity>
+		<activity android:name=".activity.VideoCaptureActivity" />
+		<activity android:name=".activity.VideoCompressActivity" />
 		<activity android:name=".activity.VideoDownloadActivity" />
 		<activity android:name=".activity.VideoSwitchActivity" />
 		<activity android:name=".activity.VideoComposeActivity" />
